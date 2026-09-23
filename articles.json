@@ -1,0 +1,63 @@
+[
+    {
+      "_id": 1001,
+      "category": "Bricolage",
+      "name": "Perceuse sans fil Bosch",
+      "description": "Perceuse-visseuse sans fil 18V avec batterie et chargeur. Idéale pour les petits travaux de bricolage à la maison.",
+      "depositPrice": 80.0,
+      "ownerId": 42,
+      "isBorrowed": false,
+      "isActive": true
+    },
+    {
+      "_id": 1002,
+      "category": "Jardinage",
+      "name": "Tondeuse électrique",
+      "description": "Tondeuse électrique 1400W en bon état, parfaite pour entretenir un petit ou moyen jardin.",
+      "depositPrice": 100.0,
+      "ownerId": 17,
+      "isBorrowed": true,
+      "isActive": true
+    },
+    {
+      "_id": 1003,
+      "category": "Cuisine",
+      "name": "Appareil à raclette",
+      "description": "Appareil à raclette pouvant accueillir jusqu'à 8 personnes, avec poêlons antiadhésifs. Très bon état.",
+      "depositPrice": 30.0,
+      "ownerId": 8,
+      "isBorrowed": false,
+      "isActive": true
+    },
+    {
+      "_id": 1004,
+      "category": "Sport",
+      "name": "Vélo de ville",
+      "description": "Vélo de ville confortable avec panier avant et 7 vitesses. Convient parfaitement aux déplacements en ville.",
+      "depositPrice": 150.0,
+      "ownerId": 25,
+      "isBorrowed": false,
+      "isActive": true
+    },
+    {
+      "_id": 1005,
+      "category": "Électronique",
+      "name": "Enceinte Bluetooth JBL",
+      "description": "Enceinte Bluetooth portable avec une bonne autonomie et un son de qualité. Parfaite pour les soirées ou les sorties.",
+      "depositPrice": 50.0,
+      "ownerId": 31,
+      "isBorrowed": false,
+      "isActive": true
+    },
+    {
+      "_id": 1006,
+      "category": "Maison",
+      "name": "Aspirateur sans fil",
+      "description": "Aspirateur sans fil léger et pratique, avec plusieurs embouts pour nettoyer efficacement la maison.",
+      "depositPrice": 70.0,
+      "ownerId": 12,
+      "isBorrowed": true,
+      "isActive": true
+    }
+  ]
+  

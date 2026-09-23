@@ -1,0 +1,8 @@
+
+Lançer l'applicatif avec 
+<pre>
+npm install
+</>
+
+Puis pour démarrer le serveur 
+<pre>nodemon server</pre>
