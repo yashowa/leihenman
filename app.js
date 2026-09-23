@@ -21,28 +21,11 @@ app.use((req, res, next) => {
 
 
 
-  app.use('/api/articles',(req, res, next) => {
-
+  app.get('/api/articles',(req, res, next) => {
     Article.find()
     .then((articles)=>{res.status(200).json(articles)})
     .catch(( error)=>{res.status(400).json(error)});
-    
   })
-
-
-
-
-  app.get('/api/article/:id',(req, res, next) => {
-    console.log(req.params.id);
-    Article.findOne({_id:req.params.id}).then(
-      (article)=>{
-        res.status(200).json(article)
-    })
-    .catch((error)=>{
-      res.status(400).json(error)
-    })
-  })
-
 
   app.post('/api/articles',(req, res, next) => {
     console.log(req.body);
@@ -54,6 +37,35 @@ app.use((req, res, next) => {
         res.status(400).json({error});
     })
   })
+
+  app.get('/api/article/:id',(req, res, next) => {
+    console.log(req.params.id);
+    Article.findOne({_id:req.params.id})
+    .then(article=>res.status(200).json(article))
+    .catch(error=>res.status(400).json(error))
+  })
+
+
+  app.put('/api/article/:id',(req, res, next) => {
+    console.log(req.body);
+    const article = new Article({...req.body})
+    article.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id }).then(()=>{
+        res.status(201).json({message:'article mis à jour'})
+    }).catch((error)=>{
+        console.error('ERROR',error)
+        res.status(400).json({error});
+    })
+  })
+
+  app.delete('/api/article/:id',(req, res, next) => {
+    Article.deleteOne({ _id: req.params.id }).
+    then(()=>{ res.status(201).json({message:'article ' + req.params.id + ' supprimé'})
+    }).catch((error)=>{
+        console.error('ERROR',error)
+        res.status(400).json({error});
+    })
+  })
+
 
   app.post('/api/login',(req, res, next) => {
     console.log(req.body);
