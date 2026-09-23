@@ -21,12 +21,26 @@ app.use((req, res, next) => {
 
 
 
-  app.get('/api/articles',(req, res, next) => {
+  app.use('/api/articles',(req, res, next) => {
 
     Article.find()
     .then((articles)=>{res.status(200).json(articles)})
     .catch(( error)=>{res.status(400).json(error)});
     
+  })
+
+
+
+
+  app.get('/api/article/:id',(req, res, next) => {
+    console.log(req.params.id);
+    Article.findOne({_id:req.params.id}).then(
+      (article)=>{
+        res.status(200).json(article)
+    })
+    .catch((error)=>{
+      res.status(400).json(error)
+    })
   })
 
 
@@ -37,11 +51,9 @@ app.use((req, res, next) => {
         res.status(201).json({message:'article ajouté'})
     }).catch((error)=>{
         console.error('ERROR',error)
-        res.status(400).json({error})
+        res.status(400).json({error});
     })
-  
   })
-
 
   app.post('/api/login',(req, res, next) => {
     console.log(req.body);
