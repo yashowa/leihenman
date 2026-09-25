@@ -41,7 +41,11 @@ const jwt = require('jsonwebtoken')
                     res.status(200).json({
                         user:{
                             userId:user._id,
-                            token:'Token'
+                            token:jwt.sign(
+                                {userId: user._id},
+                                'RANDOM_TOKEN_SECRET',
+                                {expiresIn:'24h'}
+                            )
                         }
                     })   
                 }
