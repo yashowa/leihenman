@@ -22,8 +22,8 @@ const articleSchema = new mongoose.Schema({
     required: true,
     min: 0,
   },
-  ownerId: {
-    type: Number,
+  userId: {
+    type: String,
     required: true,
   },
   isBorrowed: {
@@ -34,6 +34,8 @@ const articleSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  imageUrl: { type: String},
+
 }, {
   timestamps: true,
 });

@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 app.use(express.json());
+app.use('/uploads', express.static('uploads'));
+const path = require('path');
 const articleRoutes = require('./router/article');
 const userRoutes = require('./router/user');
 const authRoutes = require('./router/auth');
@@ -22,6 +24,7 @@ mongoose.connect(MONGOURI)
   app.use('/api/articles',articleRoutes);
   app.use('/api/user',userRoutes);
   app.use('/api/auth',authRoutes);
+  app.use('/images',express.static(path.join(__dirname,'uploads/images')));
 
 
 module.exports =app; 
